@@ -12,6 +12,10 @@ var path = {
 
 
 var gulp        = require('gulp'),
+    minifyCss   = require('gulp-minify-css'),
+    sourcemaps  = require('gulp-sourcemaps'),
+    postcss     = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
     browsersync = require('browser-sync'),
     colors      = require('colors'),
     beep        = require('beepbeep'),
@@ -63,6 +67,11 @@ gulp.task('styles', function() {
             errorHandler: onError
         }))
         .pipe(sass())
+        .pipe(postcss([ autoprefixer({ browsers: ['last 2 versions'] }) ]))
+        .pipe(sourcemaps.init())
+        .pipe(minifyCss())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest( path.distStyles ));
 });
 
