@@ -16,3 +16,5 @@ Un template de frontend per cubrir les meves necessitats.
 - Html5Shiv
 - Jquery#2.1.4
 - Concatenat i minificació del javascript
+- Minificació CSS
+- Autoprefixer
