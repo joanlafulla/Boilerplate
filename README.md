@@ -39,3 +39,19 @@ git remote -v
 ```
 git push -u origin main
 ```
+
+### Añadir Google Font
+Nos dirigimos a la web de Google Fonts: <a href="https://fonts.google.com/" target="_blank">Google Fonts</a>
+
+Escogemos la fuente deseada y los weights.
+
+Añadimos el @import al archivo **_basic.scss**
+
+### Añadir Google Material Icons
+Ya tenemos listo el enlace a Material Icons en nuestro index.html
+Introducir el icono deseado mediante el span:
+```
+<span class="material-icons">
+touch_app
+</span>
+```
