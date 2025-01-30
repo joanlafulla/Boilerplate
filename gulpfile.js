@@ -8,7 +8,10 @@ var browserSync = require('browser-sync').create();
 
 function compileSass() {
     return gulp.src('scss/**/*.scss') // Path to your SCSS files
-      .pipe(sass().on('error', sass.logError))
+      .pipe(sass({
+        silenceDeprecations: ['legacy-js-api', 'mixed-decls', 'color-functions', 'global-builtin', 'import'],
+        includePaths: ['./node_modules']
+    }).on('error', sass.logError))
       .pipe(gulp.dest('css')) // Output directory for CSS files
       .pipe(browserSync.reload({
         stream: true
